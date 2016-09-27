@@ -3,18 +3,18 @@ from telegram.ext import Updater, CommandHandler, MessageHandler
 import logging
 import handlers as hnd
 
+
 # enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                            level=logging.INFO)
-logger = logging.getLogger(__name__)
+fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+logging.basicConfig(format=fmt, level=logging.INFO)
 
 
 def main():
-    # create the EventHandler
+    # create LCMbot
     updater = Updater("TOKEN")
+    dp = updater.dispatcher
 
     # register handlers
-    dp = updater.dispatcher
     dp.add_handler(CommandHandler("pinglcm", hnd.ping))
     dp.add_handler(CommandHandler("checkwebsite", hnd.is_web_up))
     dp.add_handler(CommandHandler("vietnam", hnd.vietnam))
