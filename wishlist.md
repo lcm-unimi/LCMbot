@@ -1,5 +1,4 @@
 ## COMMANDS
-* abuse 150
 * whoall
 * list down nodes
 

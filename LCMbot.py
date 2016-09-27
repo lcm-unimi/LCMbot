@@ -20,6 +20,7 @@ def main():
     dp.add_handler(CommandHandler("vietnam", hnd.vietnam))
     dp.add_handler(CommandHandler("sellyourmother", hnd.sell_your_mother))
     dp.add_handler(CommandHandler("storytime", hnd.tell_a_tale))
+    dp.add_handler(CommandHandler("abuse150", hnd.abuse_150))
     dp.add_error_handler(hnd.error)
     # dp.add_handler(MessageHandler([], hnd.print_msg_info))
 

@@ -2,6 +2,7 @@
 import subprocess as sp
 import httplib
 import numpy as np
+from insults import insults
 
 
 def ping(bot, update):
@@ -59,3 +60,8 @@ def error(bot, update, error):
     """ Log errors """
     logger.warn('Update "%s" caused error "%s"' % (update, error))
 
+
+def abuse_150(bot, update):
+    """ Verbally abuse incompetent LCM collaborators """
+    insult = np.random.choice(insults)
+    bot.sendMessage(chat_id=update.message.chat_id, text=insult)
