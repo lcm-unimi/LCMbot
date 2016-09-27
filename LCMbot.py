@@ -1,6 +1,4 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from telegram.ext import Updater, CommandHandler, MessageHandler
 import logging
 import handlers as hnd

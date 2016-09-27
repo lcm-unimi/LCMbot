@@ -47,8 +47,7 @@ def tell_a_tale(bot, update):
     stories = [ 'Non conosco ancora nessuna storia. \
 Clona il mio repo e insegnamene qualcuna!' ]
     story = np.random.choice(stories)
-    bot.sendMessage(chat_id=update.message.chat_id,
-                    text=story)
+    bot.sendMessage(chat_id=update.message.chat_id, text=story)
 
 
 def print_msg_info(bot, update):
