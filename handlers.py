@@ -47,14 +47,6 @@ def sell_your_mother(bot, update):
                   caption='cit. Mandelli')
 
 
-def tell_a_tale(bot, update):
-    """ Tell a story about LCM """
-    stories = [ 'Non conosco ancora nessuna storia. \
-Clona il mio repo e insegnamene qualcuna!' ]
-    story = np.random.choice(stories)
-    bot.sendMessage(chat_id=update.message.chat_id, text=story)
-
-
 def print_msg_info(bot, update):
     """Print all message info to console - useful for debugging purposes"""
     print update.message
