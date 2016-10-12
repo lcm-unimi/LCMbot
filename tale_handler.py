@@ -67,6 +67,11 @@ class TaleHandler:
         voter = query.from_user
         # retrieve tale
         t = filter(lambda t: t.msg_id == int(query.data), self.cur_tales)
+        if len(t) == 0:
+            # could not find this tale. this should never happen
+            # TODO log an error
+            return
+        t = t[0]
 
         if voter.id == t.author.id:
             # authors cannot upvote their own story
@@ -74,7 +79,7 @@ class TaleHandler:
                 callback_query_id=query.id,
                 text=voter.first_name + ' '
                     'tried to upvote their own tale...classic')
-        if voter.id in t.upvoters_id:
+        elif voter.id in t.upvoters_id:
             bot.answer_callback_query(
                 callback_query_id=query.id,
                 text=voter.first_name + ' upvoted...again')
