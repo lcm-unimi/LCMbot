@@ -75,18 +75,17 @@ class TaleHandler:
             # authors cannot upvote their own story
             bot.answer_callback_query(
                 callback_query_id=query.id,
-                text=voter.first_name + ' '
-                    'tried to upvote their own tale...classic')
+                text="Nope, can't upvote your own tale")
         elif voter.id in t.upvoters_id:
             bot.answer_callback_query(
                 callback_query_id=query.id,
-                text=voter.first_name + ' upvoted...again')
+                text='One upvote per person, sorry')
         else:
             t.upvoters_id.append(voter.id)
             t.upvotes += 1
             bot.answer_callback_query(
                 callback_query_id=query.id,
-                text=voter.first_name + ' upvoted the tale')
+                text='Upvote registered')
             if t.upvotes == 3:
                 n_tale = self.db.incr('n_tales')
                 self.db.hset(str(n_tale), 'author', t.author.first_name)
