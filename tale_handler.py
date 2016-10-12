@@ -33,7 +33,6 @@ class TaleHandler:
         user = update.message.from_user
         prompt_msg = update.message.reply_text(
             text='Ok, %s, tell me your story!' % user.first_name,
-            reply_to_message_id=update.message.message_id,
             reply_markup=ForceReply(selective=True))
         self.cur_authors.append((user.id, prompt_msg.message_id))
 
@@ -58,7 +57,6 @@ class TaleHandler:
         keyboard = InlineKeyboardMarkup([[b]])
         tale_msg.reply_text(
           text='Alright, I need three upvotes to add this tale to my database',
-          reply_to_message_id=tale_msg.message_id,
           reply_markup=keyboard)
 
     def save_tale(self, bot, update):
@@ -117,5 +115,6 @@ class TaleHandler:
         else:
             rnd_tale = str(np.random.randint(1, int(n_tales) + 1))
             t = self.db.hgetall(rnd_tale)
-            msg.reply_text(text="This one's from " + t['author'] + ":")
-            msg.reply_text(text=t['tale'])
+            msg.reply_text(text="This one's from " + t['author'] + ":",
+                           quote=False)
+            msg.reply_text(text=t['tale'], quote=False)

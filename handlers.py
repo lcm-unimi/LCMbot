@@ -32,13 +32,15 @@ def is_web_up(bot, update):
 def vietnam(bot, update):
     """Spout wise words"""
     update.message.reply_text(text='Ricordate, ragazzi, LCM è come il Vietnam.'
-                              'Una volta entrati, è impossibile uscirne!')
+                              'Una volta entrati, è impossibile uscirne!',
+                              quote=False)
 
 
 def sell_your_mother(bot, update):
     """Remind people not to disclose passwords"""
     pic_id = 'AgADBAADbasxG9JPlAQNlEW3ML5sk_bEXxkABHKAFZ1ZzBZsNvMBAAEC'
-    update.message.reply_photo(photo=pic_id, caption='cit. Mandelli')
+    update.message.reply_photo(photo=pic_id, caption='cit. Mandelli',
+                               quote=False)
 
 
 def print_msg_info(bot, update):
@@ -56,4 +58,4 @@ def error(bot, update, error):
 def abuse_150(bot, update):
     """Verbally abuse incompetent LCM collaborators"""
     insult = np.random.choice(insults)
-    update.message.reply_text(text=insult)
+    update.message.reply_text(text=insult, quote=False)
