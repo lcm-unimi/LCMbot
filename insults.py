@@ -30,7 +30,7 @@ insults = (
     "Let's just say you're not the fastest node in the cluster.",
     "Let's just say you're not the fastest disk in the RAID.",
     "Your mother's so fat she breaks for loops",
-    "Maybe you should go back to use windows.",
+    "Maybe you should go back to Windows.",
     "Your mum is so fat her max file size is 4GB!",
     "You'll never be half the man your mother is.",
     "If my dog had your face I'd shave his butt and teach him to walk backwards.",
@@ -38,6 +38,6 @@ insults = (
     "You have small tits for a fat girl.",
     "You're blue waffles testimonial. You are a regurgitated anal-cum bubble",
     "You are Puddu's illegitimate son",
-    "May I suggest you stop embarass yourself playing Nexuiz and go back to minesweeper?"
+    "May I suggest you stop embarassing yourself playing Nexuiz and go back to minesweeper?"
 )
 
