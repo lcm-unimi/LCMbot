@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 from telegram.ext import Updater, CommandHandler, MessageHandler
-import logging
 import handlers as hnd
-
-
-# enable logging
-fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-logging.basicConfig(format=fmt, level=logging.INFO)
 
 
 def main():

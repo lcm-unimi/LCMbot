@@ -3,6 +3,10 @@ import subprocess as sp
 import httplib
 import numpy as np
 from insults import insults
+import logging
+# enable logging
+fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+logging.basicConfig(format=fmt, level=logging.INFO)
 
 
 def ping(bot, update):
@@ -58,7 +62,9 @@ def print_msg_info(bot, update):
 
 def error(bot, update, error):
     """Log errors"""
-    logger.warn('Update "%s" caused error "%s"' % (update, error))
+    # create a logger with function scope ("static" object)
+    error.logger = logging.getLogger(__name__)
+    error.logger.warn('Update "%s" caused error "%s"' % (update, error))
 
 
 def abuse_150(bot, update):
