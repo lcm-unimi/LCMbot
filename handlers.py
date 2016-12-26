@@ -32,7 +32,7 @@ def is_web_up(bot, update):
 
 def vietnam(bot, update):
     """Spout wise words"""
-    update.message.reply_text(text='Ricordate, ragazzi, LCM è come il Vietnam.'
+    update.message.reply_text(text='Ricordate, ragazzi, LCM è come il Vietnam. '
                               'Una volta entrati, è impossibile uscirne!',
                               quote=False)
 
