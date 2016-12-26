@@ -3,6 +3,7 @@ import subprocess as sp
 import httplib
 import numpy as np
 from insults import insults
+from speak import produce_sentence
 import logging
 # enable logging
 fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -59,3 +60,9 @@ def abuse_150(bot, update):
     """Verbally abuse incompetent LCM collaborators"""
     insult = np.random.choice(insults)
     update.message.reply_text(text=insult, quote=False)
+
+
+def speak(bot, update, args):
+    """Produce pseudo-random wise words"""
+    word = args[0] if len(args) > 0 else None
+    update.message.reply_text(text=produce_sentence(word), quote=False)
