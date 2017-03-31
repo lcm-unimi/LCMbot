@@ -66,3 +66,7 @@ def speak(bot, update, args):
     """Produce pseudo-random wise words"""
     word = args[0] if len(args) > 0 else None
     update.message.reply_text(text=produce_sentence(word), quote=False)
+
+def moarpuddu(bot, update):
+    """More broken pipes for Puddu"""
+    update.message.reply_text(text="più broken pipe per Puddu", quote=False)
