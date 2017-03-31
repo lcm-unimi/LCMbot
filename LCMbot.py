@@ -17,6 +17,7 @@ def main():
     dp.add_handler(CommandHandler('sellyourmother', hnd.sell_your_mother))
     dp.add_handler(CommandHandler('abuse150', hnd.abuse_150))
     dp.add_handler(CommandHandler('rndwisdom', hnd.speak, pass_args=True))
+    dp.add_handler(CommandHandler('moarpuddu', hnd.moarpuddu))
 
     tale_handler = TaleHandler()
     dp.add_handler(CommandHandler('addatale', tale_handler.prompt_user))
